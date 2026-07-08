@@ -14,3 +14,19 @@ The default display server will be X11. This decision is based primarily on comp
 Users remain free to install and use Wayland after installation if their hardware and preferred desktop environment support it.
 
 This decision is not considered permanent. As Wayland support for older hardware continues to mature, it will be periodically re-evaluated. If testing demonstrates that Wayland can provide comparable compatibility while improving performance, efficiency, or overall user experience on the project's target hardware, the default display server may change in a future release.
+
+## Firefox Content Process Count
+
+### Decision
+
+GalapagOS will reduce Firefox's content process count from the upstream default to **4**.
+
+### Rationale
+
+Testing on the GalapagOS reference system showed approximately 200 MB lower memory usage during general web browsing while maintaining comparable responsiveness and media playback performance.
+
+The change aligns with GalapagOS's goal of improving practical usability on memory-constrained systems.
+
+### Review Criteria
+
+This setting should be periodically re-evaluated as Firefox evolves. If future versions change process management or testing no longer demonstrates a measurable benefit, the default should be reconsidered.
