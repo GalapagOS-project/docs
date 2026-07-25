@@ -48,3 +48,14 @@ Plymouth primarily provides cosmetic improvements during boot. It does not impro
 GalapagOS prioritises reliability, compatibility, and ease of troubleshooting over cosmetic boot animations. Boot messages remain visible, making it easier to diagnose startup problems, particularly on older hardware.
 
 Users who prefer a graphical boot experience remain free to install Plymouth manually.
+
+
+## GUI Package Manager
+
+### Decision
+
+GalapagOS will install Bazaar on the desktop profile, using the flatpak backend. There will be no GUI package manager on the lite profile.
+
+### Rationale
+
+We either needed to use a package manager that directly interfaces with pacman, or that uses something like flatpak isntead. It was preferred for it to be a pacman interface for better system integration, but the only options were available only on the AUR repo which I explicitly prohibit from enabling by default, as I have security concerns regarding it. This means I will have to choose an option that utilises an alternative backend. I narrowed my options down to KDE Discover and Bazaar. I think both look modern, but bazaar has a relatively higher memory footprint when being used. However, KDE Discover may pull in quite a few KDE libraries and dependencies. In order to reduce dependencies and storage footprint I have decided to choose Bazaar.
